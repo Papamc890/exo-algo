@@ -1,0 +1,40 @@
+ALGORITHME AnalysePhrase
+
+VARIABLES
+    caractere : CARACTERE
+    longueur, mots, voyelles : ENTIER
+
+DEBUT
+    longueur ← 0
+    mots ← 0
+    voyelles ← 0
+
+    ECRIRE("Saisir une phrase :")
+
+    REPETER
+        LIRE(caractere)
+
+        longueur ← longueur + 1
+
+        SI caractere = " " ALORS
+            mots ← mots + 1
+        FIN_SI
+
+        SI caractere = "a" OU caractere = "e"
+        OU caractere = "i" OU caractere = "o"
+        OU caractere = "u" OU caractere = "y"
+        ALORS
+            voyelles ← voyelles + 1
+        FIN_SI
+
+    JUSQU'A caractere = "."
+
+    SI longueur > 1 ALORS
+        mots ← mots + 1
+    FIN_SI
+
+    ECRIRE("Longueur : ", longueur)
+    ECRIRE("Nombre de mots : ", mots)
+    ECRIRE("Nombre de voyelles : ", voyelles)
+
+FIN
